@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-st.title("Linear Regression with Multicollinearity")
+st.title("Linear Regression")
 
 if st.button("Run Analysis"):
     

@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-st.title("Linear Regression ")
+st.title("Linear Regression with Multicollinearity")
 
 if st.button("Run Analysis"):
     
@@ -31,8 +31,8 @@ if st.button("Run Analysis"):
     # Step 6: Create x_3 = x_1 + 0.001 * Uniform(0,1)
     x_3 = x_1 + 0.001 * np.random.uniform(0, 1, 50)
     
-    # Step 7: Generate new response y ~ N(10, 25) where sigma^2 = 25
-    y_2 = np.random.normal(10, np.sqrt(25), 50)
+    # Step 7: Generate new response y_2 = beta_1 * x_1 + beta_2 * x_2
+    y_2 = model1.coef_[0] * x_1 + model1.coef_[1] * x_2 + model1.intercept_
     
     # Step 8: Fit linear regression y = beta_1 * x_1 + beta_2 * x_2 + beta_3 * x_3
     X_model2 = np.column_stack([x_1, x_2, x_3])

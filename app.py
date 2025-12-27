@@ -2,7 +2,9 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-st.title("Linear Regression with Multicollinearity")
+st.title("Linear Regression ")
+
+show_vectors = st.checkbox("Show all three vectors (x₁, x₂, x₃)")
 
 if st.button("Run Analysis"):
     

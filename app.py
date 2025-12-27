@@ -34,16 +34,15 @@ if st.button("Run Analysis"):
     # Step 7: Generate new response y_2 = beta_1 * x_1 + beta_2 * x_2
     y_2 = model1.coef_[0] * x_1 + model1.coef_[1] * x_2 + model1.intercept_
     
-    # Step 8: Fit linear regression y = beta_1 * x_1 + beta_2 * x_2 + beta_3 * x_3
-    X_model2 = np.column_stack([x_1, x_2, x_3])
+    # Step 8: Fit linear regression y = beta_1 * x_1 + beta_2 * x_3
+    X_model2 = np.column_stack([x_1, x_3])
     model2 = LinearRegression()
     model2.fit(X_model2, y_2)
     
-    st.header("Model 2: y = β₁·x₁ + β₂·x₂ + β₃·x₃")
+    st.header("Model 2: y = β₁·x₁ + β₂·x₃")
     st.write(f"Intercept: {model2.intercept_:.4f}")
     st.write(f"β₁ (x₁): {model2.coef_[0]:.4f}")
-    st.write(f"β₂ (x₂): {model2.coef_[1]:.4f}")
-    st.write(f"β₃ (x₃): {model2.coef_[2]:.4f}")
+    st.write(f"β₂ (x₃): {model2.coef_[1]:.4f}")
     
     st.divider()
     

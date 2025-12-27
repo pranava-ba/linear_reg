@@ -2,9 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-st.title("Linear Regression ")
-
-show_vectors = st.checkbox("Show all three vectors (x₁, x₂, x₃)")
+st.title("Linear Regression with Multicollinearity")
 
 if st.button("Run Analysis"):
     
@@ -49,25 +47,22 @@ if st.button("Run Analysis"):
     
     st.divider()
     
-    # Show vectors option
-    show_vectors = st.checkbox("Show all three vectors (x₁, x₂, x₃)")
+    # Show vectors
+    st.header("Vector Values")
     
-    if show_vectors:
-        st.header("Vector Values")
-        
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            st.subheader("x₁")
-            st.write(x_1)
-        
-        with col2:
-            st.subheader("x₂ = 2·x₁")
-            st.write(x_2)
-        
-        with col3:
-            st.subheader("x₃ = x₁ + 0.001·U(0,1)")
-            st.write(x_3)
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.subheader("x₁")
+        st.write(x_1)
+    
+    with col2:
+        st.subheader("x₂ = 2·x₁")
+        st.write(x_2)
+    
+    with col3:
+        st.subheader("x₃ = x₁ + 0.001·U(0,1)")
+        st.write(x_3)
 
 else:
     st.info("Click 'Run Analysis' to generate data and fit regression models")

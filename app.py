@@ -22,9 +22,9 @@ if st.button("Run Analysis"):
     model1.fit(X_model1, y_1)
     
     st.header("Model 1: y = β₁·x₁ + β₂·x₂")
-    st.write(f"Intercept: {model1.intercept_:.4f}")
-    st.write(f"β₁ (x₁): {model1.coef_[0]:.4f}")
-    st.write(f"β₂ (x₂): {model1.coef_[1]:.4f}")
+    st.write(f"Intercept: {model1.intercept_:.6f}")
+    st.write(f"β₁ (x₁): {model1.coef_[0]:.6f}")
+    st.write(f"β₂ (x₂): {model1.coef_[1]:.6f}")
     
     st.divider()
     
@@ -40,9 +40,9 @@ if st.button("Run Analysis"):
     model2.fit(X_model2, y_2)
     
     st.header("Model 2: y = β₁·x₁ + β₂·x₃")
-    st.write(f"Intercept: {model2.intercept_:.4f}")
-    st.write(f"β₁ (x₁): {model2.coef_[0]:.4f}")
-    st.write(f"β₂ (x₃): {model2.coef_[1]:.4f}")
+    st.write(f"Intercept: {model2.intercept_:.6f}")
+    st.write(f"β₁ (x₁): {model2.coef_[0]:.6f}")
+    st.write(f"β₂ (x₃): {model2.coef_[1]:.6f}")
     
     st.divider()
     

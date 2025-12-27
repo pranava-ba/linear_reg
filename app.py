@@ -1,8 +1,7 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
 
-st.title("Linear Regression")
+st.title("Linear Regression with Multicollinearity")
 
 # Manual Linear Regression Implementation
 def linear_regression(X, y):

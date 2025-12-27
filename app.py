@@ -4,8 +4,8 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 import plotly.graph_objects as go
 
-st.title("Linear Regression with Multicollinearity")
-st.write("Demonstrating the impact of multicollinearity on linear regression models")
+st.title("Linear Regression ")
+st.write("Generating a random vector")
 
 # Generate data button
 if st.button("Run Analysis"):
@@ -44,7 +44,7 @@ if st.button("Run Analysis"):
     st.divider()
     
     # Step 6: Create x_3 = x_1 + 0.001 * Uniform(0,1)
-    x_3 = x_1 + 0.001 * np.random.uniform(0, 1, 50)
+    x_3 = x_1 + (0.001 * np.random.uniform(0, 1, 50))
     
     # Step 7: Generate new response y ~ N(10, 25)
     y_2 = np.random.normal(10, np.sqrt(25), 50)
@@ -65,7 +65,7 @@ if st.button("Run Analysis"):
     st.write(f"**R² Score:** {r2_2:.4f}")
     
     # Plot Model 2
-    fig2 = go.Figure()
+    '''fig2 = go.Figure()
     fig2.add_trace(go.Scatter(x=x_1, y=y_2, mode='markers', name='Actual y', marker=dict(color='blue')))
     fig2.add_trace(go.Scatter(x=x_1, y=y_pred_2, mode='markers', name='Predicted y', marker=dict(color='red')))
     fig2.update_layout(title="Model 2: Actual vs Predicted", xaxis_title="x₁", yaxis_title="y")
@@ -79,7 +79,7 @@ if st.button("Run Analysis"):
     corr_df = pd.DataFrame({'x₁': x_1, 'x₂': x_2, 'x₃': x_3})
     st.write(corr_df.corr())
     
-    st.info("Notice: x₂ = 2·x₁ (perfect collinearity) and x₃ ≈ x₁ (near collinearity) cause unstable coefficient estimates")
+    st.info("Notice: x₂ = 2·x₁ (perfect collinearity) and x₃ ≈ x₁ (near collinearity) cause unstable coefficient estimates")'''
 
 else:
     st.info("Click 'Run Analysis' to generate data and fit regression models")
